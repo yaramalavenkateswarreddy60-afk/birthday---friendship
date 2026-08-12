@@ -1,0 +1,585 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    color: #333;
+    background: #fff9fc;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: white;
+
+    background:
+        radial-gradient(circle at 10% 20%, #ffcfdf 0%, transparent 25%),
+        radial-gradient(circle at 90% 20%, #c9d8ff 0%, transparent 25%),
+        radial-gradient(circle at 20% 90%, #ffe8a3 0%, transparent 25%),
+        linear-gradient(135deg, #ff6fae, #8c7cff, #55c7ff);
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Decorative circles */
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+
+    border-radius: 50%;
+
+    opacity: 0.35;
+}
+
+.hero::before {
+    width: 250px;
+    height: 250px;
+
+    background: #ffe066;
+
+    top: -80px;
+    left: -80px;
+}
+
+.hero::after {
+    width: 300px;
+    height: 300px;
+
+    background: #ffffff;
+
+    bottom: -120px;
+    right: -100px;
+}
+
+
+.hero-content {
+    max-width: 850px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.small-title,
+.section-label {
+    letter-spacing: 3px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+    font-size: clamp(55px, 9vw, 100px);
+
+    line-height: 1;
+
+    margin-bottom: 30px;
+
+    text-shadow:
+        3px 3px 0 rgba(0,0,0,0.08);
+}
+
+
+.hero h1 span {
+    color: #fff27a;
+}
+
+
+.hero-text {
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+
+/* BUTTON */
+
+button {
+    margin-top: 30px;
+
+    padding: 15px 30px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #ffffff;
+
+    color: #7b4dff;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.15);
+
+    transition: 0.3s;
+}
+
+
+button:hover {
+    transform: translateY(-5px) scale(1.03);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.20);
+}
+
+
+/* =========================
+   BIRTHDAY MESSAGE
+========================= */
+
+.message {
+    padding: 120px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff1f7,
+            #f4efff
+        );
+}
+
+
+.message h2,
+.memories h2,
+.friendship h2 {
+    font-size: clamp(35px, 5vw, 55px);
+
+    margin-bottom: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff4f9a,
+            #7b61ff,
+            #25a9ff
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.message-text {
+    max-width: 850px;
+
+    margin: auto;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+
+    color: #555;
+}
+
+
+/* =========================
+   PHOTO MEMORIES
+========================= */
+
+.memories {
+    padding: 110px 7%;
+
+    text-align: center;
+
+    background: #ffffff;
+}
+
+
+.photo-grid {
+    max-width: 1150px;
+
+    margin: 55px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+/* PHOTO CARD */
+
+.photo-card {
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 30px rgba(100,70,150,0.15);
+
+    transition: 0.4s;
+
+    border: 4px solid transparent;
+
+    background-clip: padding-box;
+
+    position: relative;
+}
+
+
+.photo-card:nth-child(1) {
+    border-color: #ff9ecb;
+}
+
+.photo-card:nth-child(2) {
+    border-color: #a9a0ff;
+}
+
+.photo-card:nth-child(3) {
+    border-color: #76d7ff;
+}
+
+.photo-card:nth-child(4) {
+    border-color: #ffd66b;
+}
+
+.photo-card:nth-child(5) {
+    border-color: #9be7b1;
+}
+
+.photo-card:nth-child(6) {
+    border-color: #ffad8a;
+}
+
+
+.photo-card:hover {
+    transform:
+        translateY(-12px)
+        rotate(1deg);
+
+    box-shadow:
+        0 20px 40px rgba(100,70,150,0.22);
+}
+
+
+.photo-card img {
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.5s;
+}
+
+
+.photo-card:hover img {
+    transform: scale(1.05);
+}
+
+
+/* PHOTO CAPTION */
+
+.photo-caption {
+    padding: 20px 15px 22px;
+
+    text-align: center;
+
+    background: #ffffff;
+}
+
+
+.photo-caption h3 {
+    font-size: 21px;
+
+    margin-bottom: 8px;
+
+    color: #6b4eff;
+}
+
+
+.photo-caption p {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #666;
+}
+
+
+/* =========================
+   FRIENDSHIP SECTION
+========================= */
+
+.friendship {
+    padding: 120px 7%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff4c7,
+            #ffe7f2,
+            #e6ddff
+        );
+}
+
+
+.friendship-grid {
+    max-width: 1100px;
+
+    margin: 55px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.friend-card {
+    padding: 35px 25px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.85);
+
+    box-shadow:
+        0 10px 25px rgba(100,70,150,0.12);
+
+    transition: 0.3s;
+}
+
+
+.friend-card:hover {
+    transform:
+        translateY(-10px)
+        rotate(-1deg);
+}
+
+
+.friend-card:nth-child(1) {
+    border-top: 6px solid #ff6fae;
+}
+
+.friend-card:nth-child(2) {
+    border-top: 6px solid #ffd45c;
+}
+
+.friend-card:nth-child(3) {
+    border-top: 6px solid #6f9cff;
+}
+
+.friend-card:nth-child(4) {
+    border-top: 6px solid #9c7bff;
+}
+
+
+.icon {
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+
+.friend-card h3 {
+    margin-bottom: 15px;
+
+    color: #51407d;
+}
+
+
+.friend-card p {
+    line-height: 1.7;
+
+    color: #666;
+}
+
+
+/* =========================
+   FINAL BIRTHDAY SECTION
+========================= */
+
+.final {
+    padding: 120px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #ff8fc4,
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #73c7ff,
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #ff5c9d,
+            #805cff
+        );
+}
+
+
+.final-card {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+
+.final-card h2 {
+    font-size: clamp(40px, 6vw, 65px);
+
+    margin-bottom: 25px;
+}
+
+
+.final-card p {
+    font-size: 19px;
+
+    line-height: 1.8;
+}
+
+
+/* SURPRISE */
+
+.surprise {
+    display: none;
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.18);
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    font-size: 18px;
+
+    animation: pop 0.5s ease;
+}
+
+
+@keyframes pop {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background: #30254f;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .photo-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .friendship-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-text {
+        font-size: 17px;
+    }
+
+    .photo-grid,
+    .friendship-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card img {
+        height: 330px;
+    }
+
+    .message,
+    .memories,
+    .friendship {
+        padding: 80px 20px;
+    }
+
+}
